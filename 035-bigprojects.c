@@ -2,12 +2,22 @@
 
 int main()
 {
-    int day,month,year,error;
-    error=0;
+    int day,month,year,error=0;
+    int LeapYear=0;
+    
 
     printf("tell me your target date with following format (day month year): ");
     scanf("%d%d%d" ,&day ,&month ,&year);
 
+    //LeapYear condition   1  yani sal kabise va 0 yani gheir kabise
+    if (year%400==0)
+        LeapYear=1;
+    else if (year%100==0)
+        LeapYear=0;
+    else if (year%4==0)
+        LeapYear=1;
+    else
+        LeapYear=0;
     //condition for month and day
     switch (month)
     {
@@ -23,20 +33,21 @@ int main()
                     break;
 
 
-                //mohasebe sal kabise         {
-        case 2:
-            if (year%400==0 && day==29) 
+                //mohasebe sal kabise
+         case 2:
+            if (LeapYear==1 && day==29)
                 printf("%d %d" ,1,month+1);
-            else if (year%400==0 && day<29 && day>=1)
+            else if (LeapYear==1 && day<29 && day>=1)
                 printf("%d %d" ,day+1,month);
-            else if (year%100==0 && day==28)
+            else if (LeapYear==0 && day==28)
                 printf("%d %d" ,1,month+1);
-            else if (year%100==0 && day<28 && day>=1)
+            else if (LeapYear==0 && day<28 && day>=1)
                 printf("%d %d" ,day+1,month);
-            else if (year%4==0 && day==29)
-                printf("%d %d" ,1,month+1);
-            else if (year%4==0 && day<29 && day>=1)
-                printf("%d %d" ,day+1,month);
+            else{
+                error=1; // 1 shodane error be manaie vorodi eshtebah karbar (dar entehaie code ba dastoor switch case jologoro mishe az print "year")
+                printf("Error");
+                }
+                    break;
 
         case 3:
             if (day==31)
@@ -151,9 +162,9 @@ int main()
                 break;
                 case 0:
             if (month==12 && day==31)
-                printf(" %d " ,year+1);
+                printf(" %d\n" ,year+1);
             else
-                printf(" %d " ,year);
+                printf(" %d\n" ,year);
                 break;
             }
     return 0;  
