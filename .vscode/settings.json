@@ -1,4 +1,5 @@
 {
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
   "C_Cpp_Runner.debuggerPath": "gdb",
@@ -49,4 +50,5 @@
   ],
   "python.testing.pytestEnabled": false,
   "python.testing.unittestEnabled": true
+  
 }

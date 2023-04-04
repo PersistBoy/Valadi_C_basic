@@ -7,9 +7,13 @@ int main()
     printf("Type a Year: ");
     scanf("%d" ,&year);
 
-    if (year%4==0 && (year%100==0 || year%400==0))
-        printf("%d is NOT leap year\n" ,year);
-    else if (year%4==0 && year%100==0 && year%400==0)
-        printf("the %d leap year\n" ,year);
+    if (year%400==0)
+        printf("year %d is a leap year\n" ,year);
+    else if (year%100==0)
+        printf("year %d is NOT a leap year\n" ,year);
+    else if (year%4==0)
+        printf("year %d is a leap year\n" ,year);
+    else
+        printf("year %d is NOT a leap year\n" ,year);
     return 0;
 }
