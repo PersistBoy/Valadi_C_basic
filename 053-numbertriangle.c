@@ -2,23 +2,27 @@
 
 int main()
 {
-    int i,j,k,num;
+    int i,n,j,space;
+    int cv=1;
+    
+    printf("Enter a number:");
+    scanf("%d",&n);
 
-    printf("Enter a number: ");
-    scanf("%d" ,&num);
-
-    for (k=1 ; k<=num ; k++)
+    for (i=1 ; i<=n ; i++)
     {
-        for (j=num-1 ; j>=i ; j--)
+        for (space=n-i ; space>=1 ; space--)
         {
             printf(" ");
         }
-        for (i=1 ; i<=k ; i++)
+        
+        
+        for (j=1 ; j<=i ; j++)
         {
-            printf("%d" ,i);
+            printf("%d " ,cv);
+            cv+=1;
         }
-
+        
         printf("\n");
-    }
+    } 
     return 0;
 }
