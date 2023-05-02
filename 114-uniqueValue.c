@@ -1,31 +1,39 @@
 #include <stdio.h>
-#define size 5
+#define size 10
 
 int main()
 {
     int arr[size];
-    int i,j;
+    int i,j=0;
+    int counter=0;
 
+    //initalize the array
     for (i=0 ; i<size ; i++)
     {
         printf("Enter the no.%d: " ,i+1);
         scanf("%d" ,&arr[i]);
     }
-    for (j=0 ; j<size ; j++) //j==addadi ke bayad barrasi konim
+
+
+    for (i=0 ; i<size ; i++)
     {
-        i=j+1;
-        do // counter e kar
+        for(j=0 ; j<size ; j++)
         {
-            if (arr[j]==arr[i])
+            if (i==j)
+            {
+                continue;
+            }
+            else if(arr[i]==arr[j])
             {
                 break;
             }
-            else
-            {
-                printf("the Value of %d is unique on this array\n" ,arr[i]);
-                i++;
-            }
-        }while (i<size);
+        }
+        if(j==10)
+        {
+            printf("%d\n" ,arr[i]);
+            counter++;
+        }
     }
+    printf("%d number are unique on this arr\n" ,counter);
     return 0;
 }
