@@ -7,7 +7,7 @@ int main()
     int i,j;
     int n;
     int temp;
-    int rightOrLeft;
+    char rightOrLeft;
 
     //initialize arr section
     for (i=0 ; i<size ; i++)
@@ -20,10 +20,12 @@ int main()
     printf("good now tell me the rotation number: ");
     scanf("%d" ,&n);
 
-    rightOrLeft=1; //'0' == Left        '1' == Right;
+    //letf or right section
+    printf("\nif you wanna rotate to right type\"R\"\nif you wanna rotate to left type \"L\"\n:");
+    scanf(" %c" ,&rightOrLeft);
 
     //main progress section (left)
-    if (rightOrLeft==0)
+    if (rightOrLeft=='L')
     {
         for(j=0 ; j<n ; j++)
         {
@@ -36,16 +38,16 @@ int main()
         }
     }
 
-    //main progress section (left)
-    else if (rightOrLeft==1);
+    //main progress section (right)
+    else if (rightOrLeft=='R')
     {
         for(j=0 ; j<n ; j++)
         {
             temp=arr[size-1];
-            for(i=size-2 ; i>=0 ; i--)
-            {
-                arr[i-1]=arr[i];
-            }
+                for(i=size-2 ; i>=0 ; i--)
+                {
+                    arr[i+1]=arr[i];
+                }
             arr[0]=temp;
         }
     }
