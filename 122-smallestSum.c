@@ -10,14 +10,21 @@ int abs(int num)
 
 int main()
 {
-    int arr[size];
-    int i;
+    int arr[size]={-4,8,2,1};
+    int i,j;
+    int sum=arr[0]+arr[1];
 
-    for (i=0 ;i<size ;i++) //initialize arr
+    for (i=0 ; i<size ; i++)
     {
-        printf("Enter NO.%d: " ,i+1);
-        scanf("%d" ,&arr[i]);
+        for (j=i+1 ; j<size ; j++)
+        {
+            if(abs(arr[i]+arr[j])<abs(sum))
+            {
+                sum=arr[i]+arr[j];
+            }
+        }
     }
 
-
+    printf("%d\n" ,sum);
+    return 0;
 }
