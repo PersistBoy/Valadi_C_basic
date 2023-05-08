@@ -3,14 +3,14 @@
 
 int stringWords(char *str)
 {
-    int i;
+    int i=0;
     int counter=1;
 
     for (i=0 ; str[i]!='\0' ; i++)
     {
         if (str[i]==' ')
         {
-            counter++;
+            counter++;   
         }
     }
     return counter;
@@ -19,7 +19,7 @@ int stringWords(char *str)
 int main()
 {
     char str[20];
-    gets(str);
+    fgets(str, 20, stdin);
 
     printf("This text have %d word\n" ,stringWords(str));
     return 0;

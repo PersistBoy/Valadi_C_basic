@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int lengthOfString(char *str)
 {
@@ -15,10 +14,10 @@ int lengthOfString(char *str)
 
 int main()
 {
-    char strword[1];
+    char strword[20];
 
     printf("Enter some words . not too much , im a little noob :D: ");
-    gets(strword);
+    fgets(strword, 20 ,stdin);
 
     printf("the lenght of your word with Spaces is %d\n" ,lengthOfString(strword));
 
