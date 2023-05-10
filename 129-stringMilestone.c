@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#define strsize 5
+#define strsize 6
 
 int main()
 {
@@ -13,7 +13,7 @@ int main()
 
     for (i=0 ; i<strsize/2 ; i++)
     {
-        if (str[strsize-2]!=str[i])
+        if (str[strsize-2-i]!=str[i])
         {
             flag=0;
             break;

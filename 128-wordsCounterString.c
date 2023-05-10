@@ -5,8 +5,9 @@ int stringWords(char *str)
 {
     int i=0;
     int counter=1;
+    int lenght=strlen(str);
 
-    for (i=0 ; str[i]!='\0' ; i++)
+    for (i=0 ; i<strlen(str) ; i++)
     {
         if (str[i]==' ')
         {
