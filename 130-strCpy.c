@@ -13,23 +13,21 @@ void strcpy2(char firstStr[5] , char secondStr[5])
 
 int main()
 {
-    char str1[6];
+    char str1[6]="hello";
     char str2[6];
-    fgets(str1 , 6 , stdin);
 
-    printf("Str1 before\n");
-    puts(str1);
-    printf("Str2 before\n");
-    puts(str2);
-
-    printf("\n");
+    int n=0;
+    while ((str1[n++]=getchar())!='\n');
+    
+    printf("str1 before is: %s\n" ,str1);
+    printf("str2 before is: %s\n" ,str2);
 
     strcpy2(str1,str2);
+    printf("\n");
 
-    printf("Str1 after\n");
-    puts(str1);
-    printf("Str2 after\n");
-    puts(str2);
+    printf("str1 after is: %s\n" ,str1);
+    printf("str2 after is: %s\n" ,str2);
+    
 
     return 0;
 }
