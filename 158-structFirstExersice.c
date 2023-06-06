@@ -1,20 +1,20 @@
 #include <stdio.h>
 
-struct point{
+typedef struct point{
     int x;
     int y;
-};
+} point;
 
-struct date{
+typedef struct date{
     int day;
     int month;
     int year;
-};
+} date ;
 
 int main()
 {
-    struct point point1;
-    struct date d1;
+    point point1;
+    date d1;
 
     printf("tell me the date of urself (day/month/year): \n");
     scanf("%d%d%d" ,&d1.day,&d1.month,&d1.year);
