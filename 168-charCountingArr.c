@@ -1,19 +1,23 @@
 #include <stdio.h>
-#define size 7
+#define size 15
 int main()
 {
-    char sourceArr[size] = "eiretce" ;
-    int countArr[32]; {0};
+    char sourceArr[size] = "hojjatteimourii" ;
+    int countArr[26]={0};
     int i;
-    int maxIndex;
+    int maxIndex = 0 ;
 
     for (i=0 ; i<size ; i++)
     {
-        countArr[sourceArr[i]-96]++;
+        countArr[sourceArr[i]-97]++;
     }
 
-    for (i=0 ; i<32 ; i++)
+    for (i=1 ; i<26 ; i++)
     {
-        
+        if (countArr[maxIndex]<countArr[i])
+            maxIndex=i;
     }
+
+    printf("the '%c' is most apear on this char array . its apear %d time\n" ,maxIndex+97 ,countArr[maxIndex]);
+    return 0;
 }   
