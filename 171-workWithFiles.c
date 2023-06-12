@@ -13,15 +13,5 @@ int main()
         fputs("from AlphaTech\n" , pf);
     }
     fclose(pf);
-    pf = fopen("exersizeFile01.txt", "r");
-    if (pf!=NULL)
-    {
-        while(fgetc(pf))
-        {
-            count++;
-        }
-        printf("%d\n" ,count);
-    }
-    fclose(pf);
     return 0;
 }
